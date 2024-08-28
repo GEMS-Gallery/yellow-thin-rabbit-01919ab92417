@@ -1,0 +1,22 @@
+type Tip = 
+ record {
+   author: opt text;
+   content: text;
+ };
+type Macro = 
+ record {
+   content: text;
+   description: opt text;
+   name: text;
+ };
+type Character = 
+ record {
+   description: opt text;
+   name: text;
+ };
+service : {
+  getCharacters: () -> (vec Character) query;
+  getGeneralInfo: () -> (text) query;
+  getMacros: () -> (vec Macro) query;
+  getTips: () -> (vec Tip) query;
+}
